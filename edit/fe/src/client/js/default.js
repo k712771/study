@@ -47,4 +47,32 @@ function hoverGnb() {
     })();
 }
 
+/*
+const observer_node = function( callback, target_node = document.querySelector("body"), config = { attributes: true, childList: true, subtree: true, characterDataOldValue: true } ) {
+    const observer = new MutationObserver( callback );
+    observer.observe( target_node, config );
+ }
+ */
+
 new hoverGnb;
+
+/*
+function clicka() {
+    const btns = document.querySelectorAll(".btn:not([data-event-ok=true])");
+    btns.forEach(( btn ) => {
+        btn.dataset.eventOk = "true";
+        btn.addEventListener("click", function() {
+            alert("눌름");
+            document.querySelector("footer").innerHTML = "<button type='button' class='btn'>bbb</button>";
+        });
+    });
+}
+
+observer_node( clicka );
+
+
+
+observer_node(function() {
+    console.log("변해따");
+});
+*/

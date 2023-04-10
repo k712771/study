@@ -16,8 +16,24 @@ ${ require( './include/head.html' )() }
                 </a>
                 <span class="date">2023년04월07일</span>
             </div>
+            <!-- <button type="button" class="btn">aaa</button> -->
             <div class="contents">
                 <div class="box-wrap">
+                    <div class="content-txt-wrap">
+                        <h4 class="label">설명</h4>
+                        <p class="txt">
+                            복잡한 layout을 grid의 규칙을 파악하고 적절하게 사용할줄만 안다면 쉽게 구성해낼수 있다.<br>
+                            또한 현재 날짜 기준으로 익스플로러의 사망(?)으로 인해 grid를 사용하는데 있어 크게 제한이 없다.<br>
+                            flex와 병행을 한다면 복잡한 layout을 빠르게 구성할수 있고 수정도 쉬워지는것을 알수 있었기에<br>나는 적극적으로 grid 사용하는 것을 좋아하는 편이다.<br>
+                            mdn에서는 여러개의 용어들이 제시되어있지만 먼저 가로와 세로를 이용해 구성을 한다면 쉽게 이해가 가능하다.
+                            <br>
+                            grid-template-columns(가로)과 grid-template-rows(세로)로 디자인과 가깝게 구성을 만들어내면 된다.<br>
+                            <br>
+                            아래의 여러 예시들로 이해를 도와본다.
+                            <br>
+                            (먼저 보고 이해를 한 다음에 보지말고 써보면 확실하게 체화가 된다.)
+                        </p>
+                    </div>
                     <div class="box">
                         <p class="codepen" data-height="350" data-default-tab="html,result" data-slug-hash="BaqaeJq" data-user="dallight" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
                             <span>See the Pen <a href="https://codepen.io/dallight/pen/BaqaeJq">
@@ -62,9 +78,19 @@ ${ require( './include/head.html' )() }
                           </p>
                     </div>
                 </div>
+                <div class="content-txt-wrap">
+                    <h4 class="label">마무리</h4>
+                    <p class="txt">
+                        다음 단계는 심화버전으로 minmax()를 이용한<br>
+                        grid-template-areas<br>
+                        grid-rows-areas<br>
+                        grid-gap<br>
+                        grid-column<br>
+                        grid-row<br>
+                        grid-area 을 이해해보자
+                    </p>
+                </div>
             </div>
-
-
     </main>
 	${ require( './include/footer.html' )() }
 </div>

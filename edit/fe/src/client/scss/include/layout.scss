@@ -62,7 +62,39 @@ header {
             }
         }
     }
-}
+} // header 
+.comm-amount {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 14px;
+    .date {
+        padding-left: 16px;
+        position: relative;
+        &::after {
+            content: '';
+            display: inline-flex;
+            width: 1px;
+            height: 14px;
+            position: absolute;
+            top: 50%;
+            left: 7px;
+            transform: translateY(-50%);
+            background-color: #999;
+        }
+    }
+} // .comm-amount 
+.content-txt-wrap {
+    padding: 10px 0;
+    .label {
+        font-weight: bold;
+        font-size: 20px;
+    } // .label 
+    .txt {
+        font-size: 18px;
+        line-height: 1.6;
+        padding-top: 10px;
+    } //  .txt 
+} // .content-txt-wrap 
 @media (max-width: #{$tablet-size}px) {
 }
 
