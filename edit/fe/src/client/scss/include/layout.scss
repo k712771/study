@@ -95,6 +95,33 @@ header {
         padding-top: 10px;
     } //  .txt 
 } // .content-txt-wrap 
+.link-list-wrap {
+    > ul {
+        li {
+            display: flex;
+            height: 35px;
+            align-items: center;
+            .link-go {
+                flex: 1;
+                max-width: initial;
+                width: auto;
+            }
+            span {
+                max-width: 100px;
+                width: 100%;
+                text-align: center;
+                &.title {
+                    flex: 1;
+                    max-width: initial;
+                    width: auto;
+                    text-align: start;
+                }
+            }
+
+
+        }
+    }
+}
 @media (max-width: #{$tablet-size}px) {
 }
 
