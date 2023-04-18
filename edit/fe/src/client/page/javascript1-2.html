@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> INDEX PAGE </title>
+${ require( './include/head.html' )() }
+</head>
+<body>
+<div class="wrap">
+	${ require( './include/header.html' )() }
+	<main>
+        <section class="detail-section">
+            <h2 class="page-title">scroll-animation 구현 2</h2>
+            <div class="comm-amount">
+                <a href="#" class="category">
+                    <span>javascript1-2</span>
+                </a>
+                <span class="date">2023년04월18일</span>
+            </div>
+            <!-- <button type="button" class="btn">aaa</button> -->
+            <div class="contents">
+                <div class="box-wrap">
+                    <div class="content-txt-wrap">
+                        <h4 class="label">설명</h4>
+                        <p class="txt">
+                            스크롤이 해당 element에 닿을때, 작동하는 애니메이션으로 리팩토링 해보았다.
+                        </p>
+                    </div>
+                    <div class="box">
+                        <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="XWxKMgd" data-user="dallight" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                            <span>See the Pen <a href="https://codepen.io/dallight/pen/XWxKMgd">
+                            Untitled</a> by dabin (<a href="https://codepen.io/dallight">@dallight</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                          </p>
+                    </div>
+                </div>
+
+                <div class="content-txt-wrap">
+                    <h4 class="label">마무리</h4>
+                    <p class="txt">
+                        다음시간엔 해당영역에 들어오면 변화가 일어나는것을 구현해보자!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+	${ require( './include/footer.html' )() }
+</div>
+</body>
+</html>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
