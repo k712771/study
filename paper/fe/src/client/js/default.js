@@ -1,5 +1,16 @@
 function animation() {
     let elems = Array.prototype.slice.call(document.querySelectorAll(".ani"));
+    
+    function scroll() {
+        // console.log(document.body.scrollTop, document.documentElement.scrollTop)
+        let 
+            winScroll = document.body.scrollTop || document.documentElement.scrollTop
+        ,   height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+        ,   scrolled = ( winScroll / height ) * 100
+        ,   elem = document.querySelector(".progress-bar")
+        ;
+        elem.style.width = scrolled + "%"
+    }
 
     function append_event() {
         // console.log("ok")
@@ -11,6 +22,7 @@ function animation() {
                 elem.classList.add("active")
             }
         })
+        scroll();
     }
 
     function event_listener() {
