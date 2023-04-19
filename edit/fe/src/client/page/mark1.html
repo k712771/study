@@ -8,21 +8,33 @@ ${ require( './include/head.html' )() }
 <div class="wrap">
 	${ require( './include/header.html' )() }
 	<main>
-        <h2 class="page-title">Grid layout 사용하기</h2>
-        <ul class="list-box-wrap">
-            <li class="box">
-                <a href="#"></a>
-                <div class="img">
-                    <img src="" alt="">
-                </div>
-                <div class="text">
-                    <p class="box-title"></p>
-                    <p class="box-txt"></p>
-                </div>
-            </li>
-        </ul>
+        <section class="list-section">
+            <div class="link-list-wrap">
+                <ul>
+                    <li>
+                        <span class="num">NO.</span>
+                        <span class="title">Title.</span>
+                        <span class="date">Date.</span>
+                        <span class="date-add">Add.</span>
+                    </li>
+                    <li>
+                        <span class="num">1</span>
+                        <a href="./mark1-1.html" class="link-go"><span class="title">Grid layout 기초 이해하기</span></a>
+                        <span class="date">23-04-04</span>
+                        <span class="date-add">23-04-07</span>
+                    </li>
+                    <li>
+                        <span class="num">2</span>
+                        <a href="./mark1-2.html" class="link-go"><span class="title">Grid layout 심화 이해하기</span></a>
+                        <span class="date">23-04-04</span>
+                        <span class="date-add">23-04-07</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
 	${ require( './include/footer.html' )() }
 </div>
 </body>
 </html>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
