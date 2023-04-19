@@ -96,8 +96,8 @@ header {
     } //  .txt 
 } // .content-txt-wrap 
 .link-list-wrap {
-    > ul {
-        li {
+    .list-box {
+        .list {
             display: flex;
             height: 35px;
             align-items: center;
