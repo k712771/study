@@ -8,14 +8,17 @@ ${ require( './include/head.html' )() }
 <div class="wrap">
 	${ require( './include/header.html' )() }
 	<main>
-		<div class="paper step1 ani">
+		<div class="paper step1 ani" delay="0">
 			<div class="text1">차근차근 리팩토링 해봅시다.</div>
 		</div>
-		<div class="paper step2 ani">
+		<div class="paper step2 ani" delay="300">
 			<div class="text2">잘 나오는지 확인해봅시다.</div>
 		</div>
-		<div class="paper step3 ani">
+		<div class="paper step3 ani" delay="900">
 			<div class="circle">원</div>
+		</div>
+		<div class="paper rolling">
+			<div class="roll">먕</div>
 		</div>
 	</main>
 	${ require( './include/footer.html' )() }

@@ -80,6 +80,16 @@ header {
             transition: width 3s;
         }
     }
+    .roll {
+        width: 150px;height: 150px;
+        border-radius: 50%;
+        background-color:cadetblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color:#fff;
+    }
 }
 
 @media (max-width: #{$tablet-size}px) {
