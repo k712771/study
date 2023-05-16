@@ -108,20 +108,20 @@ function hoverListActive() {
               },
             breakpoints: {
                 1300: {
-                    slidesPerView: 4,  //브라우저가 1024보다 클 때
+                    slidesPerView: 4,
                   },
                 1200: {
-                    slidesPerView: 3,  //브라우저가 1024보다 클 때
+                    slidesPerView: 3,
                   },
                 920: {
-                    slidesPerView: 3,  //브라우저가 1024보다 클 때
+                    slidesPerView: 3,
                   },
                 640: {
-                    slidesPerView: 2,  //브라우저가 1024보다 클 때
+                    slidesPerView: 2,
                   },
 
                 0: {
-                    slidesPerView: 1,  //브라우저가 768보다 클 때
+                    slidesPerView: 1,
                   },
             },
             on : {
@@ -135,10 +135,33 @@ function hoverListActive() {
     })();
 }
 
+function toggleOnlyMobileGnb() {
+    let
+        btn = document.querySelector(".m-gnb-btn")
+    ,   layer = document.querySelector(".gnb-wrap")
+    ;
+
+    function append_event() {
+        btn.classList.toggle("on");
+        layer.classList.toggle("on");
+    }
+
+    function event_listener() {
+        if ( btn ) btn.addEventListener("click", append_event);
+    }
+    function init() {
+        event_listener();
+    }
+    (function() {
+        init();
+    })();
+}
+
 
 new toggleVideo;
 new hoverOnlyGnb;
 new hoverListActive;
+new toggleOnlyMobileGnb;
 
 /**
  * Swiper
