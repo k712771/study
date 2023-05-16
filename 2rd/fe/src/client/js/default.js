@@ -18,4 +18,46 @@ function toggleVideo() {
         init();
     })();
 }
+
+function hoverOnlyGnb() {
+    let 
+        elems = Array.prototype.slice.call(document.querySelectorAll(".gnb>li"))
+    ,   gnb = document.querySelector(".gnb")
+    ;
+
+    function enter_listener( e ) {
+        // console.log("Dd")
+        // console.log(e.currentTarget);
+        idx = elems.indexOf(e.currentTarget);
+        // console.log(idx)
+        elems.forEach(( elem, i )=>{
+            if ( idx == i ) {
+                elem.classList.add("on")
+            } else {
+                elem.classList.remove("on")
+            }
+        })
+    }
+    function leave_listener() {
+    }
+
+
+
+    function event_listener() {
+        // console.log(elems)
+        elems.forEach((elem)=>{
+            elem.addEventListener("mouseenter", enter_listener);
+            elem.addEventListener("mouseleave", leave_listener);
+        })
+        
+    }
+
+    function init() {
+        event_listener();
+    }
+    (function() {
+        init();
+    })()
+}
 new toggleVideo;
+new hoverOnlyGnb;

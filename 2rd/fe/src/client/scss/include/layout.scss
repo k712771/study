@@ -32,19 +32,54 @@ header {
             align-items: center;
             .gnb {
                 display: flex;
-                gap:30px;
                 font-size: 12px;
                 li {
-                    &.on {
-                        a {
-                            color: #f4491e;
+                    position: relative;
+                    &:first-child {
+                        .llt {
+                            padding: 0 15px;
                         }
                     }
-                    a {
-                        color: #fff;
-
+                    &.on {
+                        .llt {
+                            color: #f4491e;
+                        }
+                        ol {
+                            opacity: 1;
+                            top: 25px;
+                            pointer-events: all;
+                        }
                     }
-
+                    .llt {
+                        color: #fff;
+                        padding: 0 60px;
+                    }
+                    ol {
+                        max-width: 144px;
+                        width: 100%;
+                        position: absolute;
+                        top: 30px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: 20px;
+                        background-color: #fff;
+                        border-radius: 10px;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition:all .25s ease-in-out;
+                        > li {
+                            + li {
+                                margin-top: 10px;
+                            }
+                            > a {
+                                white-space: nowrap;
+                                padding: 10px 0;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -63,4 +98,88 @@ footer {
 }
 
 @media (max-width: #{$mobile-size}px) {
+    header {
+
+        .header-inner {
+            padding-right: 0;
+            .logo {
+                max-width: 150px;
+                width: 30px;
+                display: flex;
+                height: 34px;
+                background: {
+                    image:url(../images/common/logo.png);
+                    repeat:no-repeat;
+                    size:contain;
+                };      
+                a {
+                    display: flex;
+                    width: 100%;
+                    height: 100%;      
+        
+                }
+            }
+            .gnb-wrap {
+                flex: initial;
+                max-width: 280px;
+                width: 100%;
+                height: 100vh;
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                .gnb {
+                    flex-direction: column;
+                    li {
+                        position: relative;
+                        &:first-child {
+                            .llt {
+                                padding: 0 15px;
+                            }
+                        }
+                        &.on {
+                            .llt {
+                                color: #f4491e;
+                            }
+                            ol {
+                                opacity: 1;
+                                top: 25px;
+                                pointer-events: all;
+                            }
+                        }
+                        .llt {
+                            color: #fff;
+                            padding: 0 60px;
+                        }
+                        ol {
+                            max-width: 144px;
+                            width: 100%;
+                            position: absolute;
+                            top: 30px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            padding: 20px;
+                            background-color: #fff;
+                            border-radius: 10px;
+                            opacity: 0;
+                            pointer-events: none;
+                            transition:all .25s ease-in-out;
+                            > li {
+                                + li {
+                                    margin-top: 10px;
+                                }
+                                > a {
+                                    white-space: nowrap;
+                                    padding: 10px 0;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
