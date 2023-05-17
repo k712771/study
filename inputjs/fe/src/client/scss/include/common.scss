@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&display=swap');
+
+body {
+	* {
+		box-sizing: border-box;
+		font-family: 'Noto Sans KR', sans-serif;
+		color: inherit;
+		font-size: inherit;
+	}
+	img { vertical-align: middle; }
+
+	&, html, .wrap { min-height: 100vh; }
+}
+.txt-wrap {
+	p {
+		color: #333;
+		font-size: 24px;
+		font-weight: bold;
+		text-align: center;
+		+ p {
+			font-weight: normal;
+			color: #999;
+			font-size: 14px;
+			margin-top: 10px;
+		}
+	}
+} // .txt-wrap
+.input-line {
+	.input {
+		width: 100%;
+		display: flex;
+		height: 55px;
+		border-bottom:3px solid #ccc;
+		padding-left: 5px;
+		position: relative;
+		z-index: 1;
+		&::placeholder {
+			font-size: 18px;
+			color: #ddd;
+		}
+		&:focus {
+			border-color:#{$main-color};
+		}
+	}
+} // .input-line 
+.for-pw {
+	position: relative;
+	max-width: 360px;
+	min-width: 280px;
+	margin: 40px auto 0 auto;
+	.pw-i {
+		z-index: 2;		
+		position: absolute;
+		width: 34px;height: 34px;
+		right: 0;
+		top: 50% ;
+		transform: translateY(-50%);
+		display: inline-block;
+		width: 25px;height: 25px;
+		cursor: pointer;
+		background: {
+			image:url(../images/icon/hide.png);
+			size:contain;
+			position: 50% 50%;
+			repeat:no-repeat;
+		};
+		&.on {
+			background-image: url(../images/icon/view.png);
+		}
+	}
+}
