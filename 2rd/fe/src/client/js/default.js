@@ -18,49 +18,6 @@ function toggleVideo() {
         init();
     })();
 }
-
-function hoverOnlyGnb() {
-    let 
-        elems = Array.prototype.slice.call(document.querySelectorAll(".gnb>li"))
-    ,   gnb = document.querySelector(".gnb")
-    ;
-
-    function enter_listener( e ) {
-        // console.log("Dd")
-        // console.log(e.currentTarget);
-        idx = elems.indexOf(e.currentTarget);
-        // console.log(idx)
-        elems.forEach(( elem, i )=>{
-            if ( idx == i ) {
-                elem.classList.add("on")
-            } else {
-                elem.classList.remove("on")
-            }
-        })
-    }
-    function leave_listener( e ) {
-        let parent = e.currentTarget.parent;
-        // console.log(parent)
-    }
-
-
-
-
-    function event_listener() {
-        // console.log(elems)
-        elems.forEach((elem)=>{
-            elem.addEventListener("mouseenter", enter_listener);
-            elem.addEventListener("mouseleave", leave_listener);
-        })
-    }
-
-    function init() {
-        event_listener();
-    }
-    (function() {
-        init();
-    })()
-}
 function hoverListActive() {
     function enter_listener() {
         // console.log(btns)
@@ -79,13 +36,7 @@ function hoverListActive() {
         enter_listener();
     }
     function leave_event(e) {
-        // console.log("vvv")
-        // console.log(e)
-        let parent = e.currentTarget.parentElement;
-        // console.log(parent)
-        if(!parent.contains(e.currentTarget)){
-            console.log("aaa")
-        }
+        e.currentTarget.classList.remove("on")
     }
 
     function event_listener() {
@@ -135,20 +86,35 @@ function hoverListActive() {
     })();
 }
 
-function toggleOnlyMobileGnb() {
+function hoverGnb() {
     let
-        btn = document.querySelector(".m-gnb-btn")
-    ,   layer = document.querySelector(".gnb-wrap")
+        btns = Array.prototype.slice.call(document.querySelectorAll(".gnb-menu"))
     ;
 
-    function append_event() {
-        btn.classList.toggle("on");
-        layer.classList.toggle("on");
+    function append_event( e ) {
+        idx = btns.indexOf(e.currentTarget);
+        btns.forEach(( elem, i )=>{
+            if ( idx == i ) {
+                elem.classList.add("on") 
+            } else {
+                elem.classList.remove("on") 
+
+            }
+        })
     }
 
+    function leave_event( e ) {
+        e.currentTarget.classList.remove("on")
+     }
+
+
     function event_listener() {
-        if ( btn ) btn.addEventListener("click", append_event);
-    }
+        btns.forEach(( elem )=>{
+            elem.addEventListener("mouseenter", append_event);
+            elem.addEventListener("mouseleave", leave_event);
+        })
+    } 
+
     function init() {
         event_listener();
     }
@@ -158,11 +124,10 @@ function toggleOnlyMobileGnb() {
 }
 
 
-new toggleVideo;
-new hoverOnlyGnb;
-new hoverListActive;
-new toggleOnlyMobileGnb;
 
+new toggleVideo;
+new hoverListActive;
+new hoverGnb;
 /**
  * Swiper
  */
