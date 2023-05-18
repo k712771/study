@@ -11,7 +11,10 @@ body {
 
 	&, html, .wrap { min-height: 100vh; }
 }
-
+main {
+	padding-top: 80px;
+    background: #111;
+}
 section {
 	&.main-visual {
 		height: 100vh;
@@ -40,9 +43,9 @@ section {
 					} // + p
 				} // p 
 			} // .text-wrap
-			.filp-img {
+			.flip-img {
 				position: absolute;
-				right: 40px;
+				right:100px;
 				bottom: 50%;
 				max-width: 500px;
 				width: 100%;
@@ -79,24 +82,24 @@ section {
 						color: #{$accent-color};
 						font-size: 52px;
 						font-weight: bold;
-					}
+					} // h2
 					p {
 						color: #3b3d40;
 						font-size: 39px;
 						font-weight: bold;
-					}
-				}
+					} // p 
+				} // .top
 				.bottom {
 					p {
 						font-size: 15px;
 						color: #656b6f;
-					}
+					} // p
 					.btn-wrap {
 						padding-top: 50px;
-					}
-				}
-			}
-		}
+					} // .btn-wrap 
+				} // .bottom 
+			} // .text-wrap
+		} // .inner 
 	} // &.info-section
 	&.prd-section {
 		background-color: #61514d;
@@ -246,6 +249,7 @@ section {
 		}
 	} // &.video-section
 	&.article-section {
+		background-color: #fff;
 		.inner {
 			padding: 50px 100px;
 			.grid-list {
@@ -288,13 +292,16 @@ section {
 							image:url(../images/common/ar-thumb0.png);
 							position: bottom 0 right 50%;
 						};
+						
 					 }
 					&.item2 { 
 						grid-area: b;
 						background: {
 							image:url(../images/common/ar-thumb1.jpg);
 							position: bottom 0 right 50%;
+							
 						};
+						@include itembg(#c2d1fb);
 					 }
 					&.item3 { 
 						grid-area: c;
@@ -302,6 +309,7 @@ section {
 							image:url(../images/common/ar-thumb2.jpg);
 							position: bottom 0 right 50%;
 						};
+						@include itembg(#f6f6f6);
 					 }
 					&.item4 { 
 						grid-area: d;
@@ -309,6 +317,7 @@ section {
 							image:url(../images/common/ar-thumb3.jpg);
 							position: bottom 0 right 50%;
 						};
+						@include itembg(#f6f6f6);
 					 }
 					&.item5 { 
 						grid-area: e;
@@ -316,6 +325,7 @@ section {
 							image:url(../images/common/ar-thumb4.jpg);
 							position: bottom 0 right 50%;
 						};
+						@include itembg(#f6f6f6);
 					 }
 				}
 
@@ -382,6 +392,43 @@ section {
 				left: 7px;
 				transform: translateY(-50%) rotate(180deg);
 				transition: transform .3s;
+			}
+		}
+	}
+} // .btn-wrap
+.chk-box {
+	> input[type=checkbox] {
+		display: none;
+		&:checked {
+			& + .box-title {
+				&::after {
+					transform:translateY(-50%) rotate(-180deg);
+                }
+				& + ul {
+					opacity: 0;
+					height: 0;
+					pointer-events: none;
+					& + li {
+						opacity: 0;
+						height: 0;
+						pointer-events: none;
+					}
+				}
+				& + .open-box {
+					opacity: 0;
+					height: 0;
+					pointer-events: none;
+					& + p {
+						opacity: 0;
+						height: 0;
+						pointer-events: none;
+						& + a {
+							opacity: 0;
+							height: 0;
+							pointer-events: none;
+						}
+					}
+				}
 			}
 		}
 	}

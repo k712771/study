@@ -17,3 +17,9 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
+@mixin itembg( $bg-color ) {
+	background-color: $bg-color;
+}
+@mixin itemsize( $size ) {
+	background-size: $size;
+}

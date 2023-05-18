@@ -40,7 +40,7 @@ function hoverOnlyGnb() {
     }
     function leave_listener( e ) {
         let parent = e.currentTarget.parent;
-        console.log(parent)
+        // console.log(parent)
     }
 
 
