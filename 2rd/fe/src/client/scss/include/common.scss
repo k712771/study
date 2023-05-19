@@ -157,9 +157,7 @@ section {
 							.btn-wrap {
 								width: 100%;
 								.detail-go {
-									max-width: 143px;
 									width: 100%;
-									height: 45px;
 									border-radius: 20px;
 									background-color: #DE5710;
 									transition: background-color .3s;
@@ -430,4 +428,12 @@ section {
 			}
 		}
 	}
+} // .chk-box
+.ani {
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+	&.active {
+		opacity: 1;
+	}
 }
+
