@@ -40,7 +40,6 @@ function changeInputValue() {
         init
     };
 }
-
 function inputNumber() {
     let inputs = Array.prototype.slice.call(document.querySelectorAll(".only-num"));
     
@@ -103,7 +102,6 @@ function activeIcon() {
     }
     return init();
 }
-
 function inpCreditNum() {
     let inputs = Array.prototype.slice.call(document.querySelectorAll(".input-number"));
     function key_listener( e ) {
@@ -129,12 +127,49 @@ function inpCreditNum() {
     }
     return init();
 }
+function chkActive() {
+    let 
+        chks = Array.prototype.slice.call(document.querySelectorAll(".chks"))
+    ,   all = document.querySelector(".all-chk")
+    ;
+
+    function all_chk( e ) {
+        chks.forEach(function( chk ) {
+			chk.checked = e.target.checked;
+		})
+    }
+
+    function chk_count( e ) {
+        let chk = 0;
+        chks.forEach(( elem )=> {
+            if ( elem.checked == true ) chk += 1;
+            // console.log(chk)
+        });
+        console.log(chks.length, chk);
+
+        if ( chks.length == chk ) all.checked = true;
+        else all.checked = false;
+    }
+
+    function event_listener() {
+        chks.forEach(( chk ) => {
+            chk.addEventListener("change", chk_count);
+        })
+        all.addEventListener("change", all_chk);
+    }
+    function init() {
+        event_listener();
+    }
+    (function() {
+        init();
+    })();
+}
 
 
 new changeInputValue;
 new inputNumber;
 new activeIcon;
 new inpCreditNum;
-
+new chkActive;
 
 

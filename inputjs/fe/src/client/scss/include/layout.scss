@@ -36,6 +36,7 @@ section {
         } // .process-pw 
     } // .pw-custom-wrap
 	.add-wrap {
+		margin-top: 50px;
 		.input-line {
 			&.max-inp3 {
 				margin: 0 auto;
@@ -49,7 +50,23 @@ section {
 				}
 			}
 		}
-	} // 
+	} // .add-wrap
+	.agree-wrap {
+		margin-top: 50px;
+		.checkbox {
+			display: flex;
+			align-items: center;
+			+ .checkbox {
+				margin-top: 10px;
+			}
+			p {
+				margin-left: 10px;
+				font-size: 18px;
+				font-weight: bold;
+				color: #797979;
+			}
+		}
+	} // .agree-wrap
 }
 @media (max-width: #{$tablet-size}px) {
 }

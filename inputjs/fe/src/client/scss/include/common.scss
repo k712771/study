@@ -69,3 +69,42 @@ body {
 		}
 	}
 } // .for-pw
+.checkbox {
+	input[type=checkbox] {
+		display: none;
+		&:checked {
+			& + .icon {
+				&::after {
+					background: {
+						image:url(../images/icon/ico-chk-blue.png);
+					} // background
+				} // &::after
+			} // & + .icon
+		} // &:checked
+		& + .icon {
+			max-width: 24px;
+			min-width: 24px;
+			width: 100%;
+			height:24px;
+			display: inline-flex;
+			border: 3px solid #ddd;
+			background-color: #fff;
+			position: relative;
+			border-radius: 5px;
+			&::after {
+				content:'';
+				position: absolute;
+				bottom: 0;
+				left: 75%;
+				transform: translateX(-50%);
+				width: 28px;height: 21px;
+				cursor: pointer;
+				background: {
+					image:url(../images/icon/ico-chk-gr.png);
+					repeat:no-repeat;
+					size:contain;
+				} // background
+			} // &::after
+		} // & + .icon
+	}  // input[type=checkbox] 
+} // .checkbox
