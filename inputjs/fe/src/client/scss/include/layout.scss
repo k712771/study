@@ -33,8 +33,23 @@ section {
 					border-radius: 50%;
 				}
 			}
-        }
-    }
+        } // .process-pw 
+    } // .pw-custom-wrap
+	.add-wrap {
+		.input-line {
+			&.max-inp3 {
+				margin: 0 auto;
+				max-width: 360px;
+				min-width: 280px;
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				input {
+					text-align: center;
+				}
+			}
+		}
+	} // 
 }
 @media (max-width: #{$tablet-size}px) {
 }

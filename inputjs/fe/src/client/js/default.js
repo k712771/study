@@ -104,10 +104,37 @@ function activeIcon() {
     return init();
 }
 
+function inpCreditNum() {
+    let inputs = Array.prototype.slice.call(document.querySelectorAll(".input-number"));
+    function key_listener( e ) {
+        // e.length이 maxlength 숫자형보다 크거나 같을때
+        // console.log(e.target.value.length, e.target.getAttribute("maxlength")*1)
+        if ( e.target.value.length >= e.target.getAttribute("maxlength") * 1 ) {
+            let idx = inputs.indexOf(e.target);
+            // console.log(idx)
+            if ( inputs[idx + 1] ) {
+                inputs[idx + 1].select();
+                inputs[idx + 1].focus();
+            }
+        }
+        // inp들이 select(), focus() 이벤트가 일어난다
+    }
+    function event_listener() {
+        inputs.forEach(( inp )=>{
+            inp.addEventListener("keyup", key_listener);
+        })
+    }
+    function init() {
+        event_listener();
+    }
+    return init();
+}
+
 
 new changeInputValue;
 new inputNumber;
 new activeIcon;
+new inpCreditNum;
 
 
 
