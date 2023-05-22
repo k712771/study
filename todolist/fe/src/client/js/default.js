@@ -1,19 +1,24 @@
 function todo() {
-    let
+    const
         form = document.querySelector("#todo-form")
     ,   ul = document.querySelector(".todo-list")
     ,   input = form.querySelector("#todo-form input")
-    ,   toDos = []
+    ,   TODOS_KEY = "todos"
+    ;
+    let 
+        toDos = []
     ;
 
     function saveToDos() {
-        localStorage.setItem("todos", JSON.stringify(toDos));
+        localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
     }
 
 
     function delete_listener(e) {
         let parent = e.target.parentElement.parentElement;
         parent.remove();
+        toDos = toDos.filter((toDo) => toDo.id !== parseInt(parent.id));
+        saveToDos(); 
     }
 
     function createToDo(newList) {
@@ -49,8 +54,17 @@ function todo() {
         event.preventDefault();
         append_event();
     }
+
     function event_listener() {
         form.addEventListener("submit", event_handle);
+
+        const savedToDos = localStorage.getItem(TODOS_KEY)
+        // console.log(savedToDos)
+        if ( savedToDos !== null ) {
+            const parsedToDos = JSON.parse(savedToDos);
+            toDos = parsedToDos;
+            parsedToDos.forEach(createToDo);
+        }
     }
     function init() {
         event_listener();
