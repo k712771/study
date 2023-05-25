@@ -188,6 +188,39 @@ function chkActive() {
         init();
     })();
 }
+function commonActiveTab() {
+    let
+        btns = Array.prototype.slice.call(document.querySelectorAll(".tab-btn"))
+    ,   contents = Array.prototype.slice.call(document.querySelectorAll(".tab-contents .content"))
+    ;
+
+    function append_listener( e ) {
+        let idx = 0;
+
+        idx = btns.indexOf(e.currentTarget);
+        // console.log(idx)
+        btns.forEach(( btn, i )=>{
+            if ( idx == i ) {
+                contents[i].classList.add("tab-content-active");
+            } else {
+                contents[i].classList.remove("tab-content-active");
+            }
+        })
+    }
+
+    function event_listener() {
+        btns.forEach(( btn ) => {
+            btn.addEventListener("click", append_listener);
+        })
+    };
+
+    function init() {
+        event_listener();
+    }
+    (function() {
+        init();
+    })();
+}
 
 new hoverGnb;
 new changeInputValue;
@@ -195,6 +228,7 @@ new inputNumber;
 new activeIcon;
 new inpCreditNum;
 new chkActive;
+new commonActiveTab;
 
 
 

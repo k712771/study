@@ -24,6 +24,9 @@ body {
 			padding-top: 50px;
 		}
 		.contents {
+			max-width: #{$pc-inner-size}px;
+			width: 100%;
+			margin: 0 auto;
 			padding: 100px;
 			display: flex;
 			flex-direction: column;
@@ -127,4 +130,27 @@ body {
 			} // & + .icon
 		}  // input[type=checkbox] 
 	} // .checkbox
+	.prev-page {
+		padding: 50px 0 100px 0;
+		text-align: center;
+		.list-go {
+			position: relative;
+			display: inline-flex;
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: -5px;
+				width: 0;
+				height: 1px;
+				background-color: #000;
+				transition: width .3s ease-in-out;
+			}
+		}
+	}
 }
