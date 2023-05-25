@@ -7,7 +7,16 @@ ${ require( './include/head.html' )() }
 <body>
 <div class="wrap">
 	${ require( './include/header.html' )() }
-	<main></main>
+	<main>
+		<section class="main-section">
+			<!-- 최신 글 -->
+			${ require( './notice.html' )() }
+			<!-- 소개 -->
+			${ require( './intro.html' )() }
+			<!-- 모든 글 -->
+			${ require( './alllist.html' )() }
+		</div>
+	</main>
 	${ require( './include/footer.html' )() }
 </div>
 </body>

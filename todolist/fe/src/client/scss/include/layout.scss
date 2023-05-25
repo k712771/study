@@ -45,6 +45,10 @@ section {
         }
     }
 }
+.dragActive {
+    transform: rotate(2deg);
+    position: absolute;
+}
 
 @media (max-width: #{$tablet-size}px) {
 }

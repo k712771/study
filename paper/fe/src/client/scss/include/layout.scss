@@ -1,97 +1,123 @@
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    background-color: #f1f1f1;
-    .progress-container {
-        width: 100%;
-        height: 15px;
-        background-color: #ccc;
-        .progress-bar {
-            width: 0;
-            height: 15px;
-            background-color: pink;
-        }
-    }
-}
-.paper {
-    height: 100vh;
-    margin-top:15px;
-    &.step1, &.step2 {
-        &.active {
-            .text1, .text2 {
-                &::after {
-                    width: 0;
-                }
-            }
-        }
-    }
-    &.step3 {
-        &.active {
-            .circle {
-                transform: translateX(50vh) rotate(360deg);
-            }
-        }
-    } // &.step3
-    .circle {
-        width: 150px;height: 150px;
-        border-radius: 50%;
-        background-color: orange;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        color:#fff;
-        transform: translateX(-100%) rotate(0);
-        transition: transform 3s;
-    }
-    .text1 {
-        font-size: 50px;
-        position: relative;
-        display: inline-block;
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            transition: width 3s;
-        }
-    }
-    &.step2 {
-        text-align: end;
-    }
-    .text2 {
-        position: relative;
-        font-size: 50px;
-        display: inline-block;
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            transition: width 3s;
-        }
-    }
-    .roll {
-        width: 150px;height: 150px;
-        border-radius: 50%;
-        background-color:cadetblue;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        color:#fff;
-    }
-}
-
+// header {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     z-index: 1;
+//     background-color: #f1f1f1;
+//     .progress-container {
+//         width: 100%;
+//         height: 15px;
+//         background-color: #ccc;
+//         .progress-bar {
+//             width: 0;
+//             height: 15px;
+//             background-color: pink;
+//         }
+//     }
+// }
+// .paper {
+//     height: 100vh;
+//     margin-top:15px;
+//     &.step1, &.step2 {
+//         &.active {
+//             .text1, .text2 {
+//                 &::after {
+//                     width: 0;
+//                 }
+//             }
+//         }
+//     }
+//     &.step3 {
+//         &.active {
+//             .circle {
+//                 transform: translateX(50vh) rotate(360deg);
+//             }
+//         }
+//     } // &.step3
+//     .circle {
+//         width: 150px;height: 150px;
+//         border-radius: 50%;
+//         background-color: orange;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         font-weight: bold;
+//         color:#fff;
+//         transform: translateX(-100%) rotate(0);
+//         transition: transform 3s;
+//     }
+//     .text1 {
+//         font-size: 50px;
+//         position: relative;
+//         display: inline-block;
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             right: 0;
+//             width: 100%;
+//             height: 100%;
+//             background-color: #fff;
+//             transition: width 3s;
+//         }
+//     }
+//     &.step2 {
+//         text-align: end;
+//     }
+//     .text2 {
+//         position: relative;
+//         font-size: 50px;
+//         display: inline-block;
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             right: 0;
+//             width: 100%;
+//             height: 100%;
+//             background-color: #fff;
+//             transition: width 3s;
+//         }
+//     }
+//     .roll {
+//         width: 150px;height: 150px;
+//         border-radius: 50%;
+//         background-color:cadetblue;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         font-weight: bold;
+//         color:#fff;
+//     }
+// }
+.drag {
+    margin: 0;
+    padding: 0;
+    background-color: #3d4e56fa;
+    display: flex;
+  }
+button {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 8px;
+    margin: 12px;
+    cursor: move;
+    font-size: 30px;
+    background: #eaeaea4f;
+  }
+  
+  .container {
+    margin: 10px;
+    padding: 10px;
+    background-color: #b5c1dc57;
+    border-radius: 8px;
+  }
+  
+  .draggable.dragging {
+    opacity: 0.5;
+  }
 @media (max-width: #{$tablet-size}px) {
 }
 
