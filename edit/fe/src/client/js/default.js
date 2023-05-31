@@ -1,3 +1,22 @@
+function mToggle() {
+    let
+        btn = document.querySelector(".mo-btn")
+    ,   layer = document.querySelector(".m-gnb")
+    ;
+    function append_event() {
+        btn.classList.toggle("on")
+        layer.classList.toggle("on")
+    }
+    function event_listener() {
+        if ( btn ) btn.addEventListener("click", append_event);
+    }
+    function init() {
+        event_listener();
+    }
+    (function() {
+        init();
+    })();
+}
 function hoverGnb() {
     let
         btns = Array.prototype.slice.call(document.querySelectorAll(".gnb-box"))
@@ -222,6 +241,7 @@ function commonActiveTab() {
     })();
 }
 
+new mToggle;
 new hoverGnb;
 new changeInputValue;
 new inputNumber;
@@ -229,6 +249,19 @@ new activeIcon;
 new inpCreditNum;
 new chkActive;
 new commonActiveTab;
+
+// swiper
+
+new Swiper(".notice-slide", {
+    direction: "vertical",
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+    pagination: {
+      clickable: true,
+    },
+  });
 
 
 

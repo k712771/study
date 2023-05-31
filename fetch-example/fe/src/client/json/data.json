@@ -1,0 +1,12 @@
+[
+	{
+		"name" : "박다빈",
+		"nickname" : "빈카츄",
+		"skill" : ["HTML", "CSS", "JAVASCRIPT"]
+	},
+	{
+		"name" : "김기락",
+		"nickname" : "진국",
+		"skill" : ["HTML5", "CSS3", "JAVASCRIPT6"]
+	}
+]
